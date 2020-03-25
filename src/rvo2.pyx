@@ -33,6 +33,7 @@ cdef extern from "RVOSimulator.h" namespace "RVO":
                         float timeHorizonObst, float radius, float maxSpeed,
                         const Vector2 & velocity)
         size_t addObstacle(const vector[Vector2] & vertices)
+        size_t clearObstacles()
         void doStep() nogil
         size_t getAgentAgentNeighbor(size_t agentNo, size_t neighborNo) const
         size_t getAgentMaxNeighbors(size_t agentNo) const
@@ -121,6 +122,9 @@ cdef class PyRVOSimulator:
         if obstacle_nr == RVO_ERROR:
             raise RuntimeError('Error adding obstacle to RVO simulation')
         return obstacle_nr
+
+    def clearObstacles(self):
+        return self.thisptr.clearObstacles()
 
     def doStep(self):
         with nogil:

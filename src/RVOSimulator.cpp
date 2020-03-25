@@ -160,6 +160,12 @@ namespace RVO {
 		return obstacleNo;
 	}
 
+	size_t RVOSimulator::clearObstacles()
+	{
+		obstacles_.clear();
+		return obstacles_.size();
+	}
+
 	void RVOSimulator::doStep()
 	{
 		kdTree_->buildAgentTree();
