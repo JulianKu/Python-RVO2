@@ -15,3 +15,16 @@
 # Python & Cython-generated files
 build/
 src/rvo2.cpp
+
+# IDE generated files
+.idea/
+
+# Distribution / packaging
+.Python
+develop-eggs/
+dist/
+eggs/
+.eggs/
+wheels/
+*.egg-info/
+*.egg
